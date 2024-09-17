@@ -1,9 +1,13 @@
 import './App.css'
+import { Search } from './components/Search'
+import { TodosList } from './components/TodosList'
 
 function App () {
   return (
     <>
-      <p>Hello World</p>
+      <h1>Inbox</h1>
+      <Search />
+      <TodosList />
     </>
   )
 }
