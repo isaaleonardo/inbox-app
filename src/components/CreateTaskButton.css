@@ -1,0 +1,27 @@
+.create-task {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding-inline: 0;
+  padding-block: 8px;
+  inline-size: 100%;
+  background: none;
+
+  & svg {
+    border-radius: 50%;
+    transition: background 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background: none;
+  }
+
+  &:focus {
+    outline-style: none;
+  }
+}
+
+.create-task:hover svg {
+  background: rgb(4 10 15);
+}
