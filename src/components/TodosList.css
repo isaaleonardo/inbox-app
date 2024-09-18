@@ -20,6 +20,8 @@
   inline-size: 20px;
   block-size: 20px;
   border-radius: 50%;
+  background-color: unset;
+  border: 1px solid white;
 
   & svg {
     opacity: 0;
@@ -50,4 +52,19 @@
 
 .todos-list li:hover .edit {
   opacity: 1;
+}
+
+.todos-list.completed {
+  & p {
+    text-decoration-line: line-through;
+  }
+
+  & .check {
+    border: 1px solid var(--button-base);
+    background-color: var(--button-base);
+  }
+
+  & svg {
+    opacity: 1;
+  }
 }

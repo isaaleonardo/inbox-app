@@ -3,11 +3,14 @@ import { TodoElement } from './TodoElement'
 import './TodosList.css'
 
 export function TodosList ({ todos }) {
+  const activeTodos = todos.filter(todo => !todo.completed)
+  const completedTodos = todos.filter(todo => !!todo.completed)
+
   return (
     <>
       <ul className='todos-list'>
         {
-          todos.map(todo => (
+          completedTodos.map(todo => (
             <li key={todo.id}>
               <TodoElement name={todo.name} />
             </li>
@@ -16,6 +19,16 @@ export function TodosList ({ todos }) {
       </ul>
 
       <CreateTaskButton />
+
+      <ul className='todos-list completed'>
+        {
+          activeTodos.map(todo => (
+            <li key={todo.id}>
+              <TodoElement name={todo.name} />
+            </li>
+          ))
+        }
+      </ul>
     </>
   )
 }
