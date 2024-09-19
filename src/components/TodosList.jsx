@@ -17,7 +17,7 @@ export function TodosList ({ todos, setTodos }) {
     <>
       <ul className='todos-list'>
         {
-          completedTodos.map(todo => (
+          activeTodos.map(todo => (
             <li key={todo.id}>
               <TodoElement
                 name={todo.name}
@@ -32,7 +32,7 @@ export function TodosList ({ todos, setTodos }) {
 
       <ul className='todos-list completed'>
         {
-          activeTodos.map(todo => (
+          completedTodos.map(todo => (
             <li key={todo.id}>
               <TodoElement
                 name={todo.name}
