@@ -2,9 +2,16 @@ import { CreateTaskButton } from './CreateTaskButton'
 import { TodoElement } from './TodoElement'
 import './TodosList.css'
 
-export function TodosList ({ todos }) {
+export function TodosList ({ todos, setTodos }) {
   const activeTodos = todos.filter(todo => !todo.completed)
   const completedTodos = todos.filter(todo => !!todo.completed)
+
+  const toggleTodo = (id) => {
+    const newTodos = [...todos]
+    const selectedTodoIndex = newTodos.findIndex(todo => todo.id === id)
+    newTodos[selectedTodoIndex].completed = !newTodos[selectedTodoIndex].completed
+    setTodos(newTodos)
+  }
 
   return (
     <>
@@ -12,7 +19,10 @@ export function TodosList ({ todos }) {
         {
           completedTodos.map(todo => (
             <li key={todo.id}>
-              <TodoElement name={todo.name} />
+              <TodoElement
+                name={todo.name}
+                onToggle={() => toggleTodo(todo.id)}
+              />
             </li>
           ))
         }
@@ -24,7 +34,10 @@ export function TodosList ({ todos }) {
         {
           activeTodos.map(todo => (
             <li key={todo.id}>
-              <TodoElement name={todo.name} />
+              <TodoElement
+                name={todo.name}
+                onToggle={() => toggleTodo(todo.id)}
+              />
             </li>
           ))
         }

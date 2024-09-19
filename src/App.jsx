@@ -23,7 +23,7 @@ function App () {
     <>
       <h1>Inbox</h1>
       <Search />
-      <TodosList todos={todos} />
+      <TodosList todos={todos} setTodos={setTodos} />
     </>
   )
 }
