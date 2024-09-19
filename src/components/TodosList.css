@@ -5,11 +5,29 @@
 
 .todos-list li {
   display: flex;
+  align-items: center;
   gap: 8px;
   list-style: none;
   border-block-end: 1px solid rgb(61 61 61);
   padding-block: 12px;
   cursor: pointer;
+
+  & form {
+    display: flex;
+    gap: 5px;
+    inline-size: 100%;
+  }
+
+  & input {
+    flex-grow: 1;
+    margin: unset;
+    padding: 10px;
+  }
+
+  & button {
+    margin: unset;
+    padding-inline: 25px;
+  }
 }
 
 .todos-list .check {
@@ -17,6 +35,7 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+  margin: unset;
   inline-size: 20px;
   block-size: 20px;
   border-radius: 50%;
