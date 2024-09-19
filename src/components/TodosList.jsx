@@ -13,6 +13,13 @@ export function TodosList ({ todos, setTodos }) {
     setTodos(newTodos)
   }
 
+  const onEdit = (id, name) => {
+    const newTodos = [...todos]
+    const selectedTodoIndex = newTodos.findIndex(todo => todo.id === id)
+    newTodos[selectedTodoIndex].name = name
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <ul className='todos-list'>
@@ -20,8 +27,9 @@ export function TodosList ({ todos, setTodos }) {
           activeTodos.map(todo => (
             <li key={todo.id}>
               <TodoElement
-                name={todo.name}
+                todo={todo}
                 onToggle={() => toggleTodo(todo.id)}
+                onEdit={onEdit}
               />
             </li>
           ))
@@ -35,7 +43,7 @@ export function TodosList ({ todos, setTodos }) {
           completedTodos.map(todo => (
             <li key={todo.id}>
               <TodoElement
-                name={todo.name}
+                todo={todo}
                 onToggle={() => toggleTodo(todo.id)}
               />
             </li>
