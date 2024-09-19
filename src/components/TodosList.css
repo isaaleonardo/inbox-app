@@ -28,6 +28,11 @@
     margin: unset;
     padding-inline: 25px;
   }
+
+  & > div {
+    display: flex;
+    inline-size: 100%;
+  }
 }
 
 .todos-list .check {
