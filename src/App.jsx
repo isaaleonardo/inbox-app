@@ -5,12 +5,20 @@ import { useState } from 'react'
 
 function App () {
   const [todos, setTodos] = useState([])
+  const [searchValue, setSearchValue] = useState('')
+
+  const searchedTodos = todos.filter(todo => {
+    const todoName = todo.name.toLocaleLowerCase()
+    const searchTerm = searchValue.toLocaleLowerCase()
+
+    return todoName.includes(searchTerm)
+  })
 
   return (
     <>
       <h1>Inbox</h1>
-      <Search />
-      <TodosList todos={todos} setTodos={setTodos} />
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+      <TodosList todos={searchedTodos} setTodos={setTodos} />
     </>
   )
 }
