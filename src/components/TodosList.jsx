@@ -51,7 +51,6 @@ export function TodosList ({ todos, setTodos }) {
                 onToggle={toggleTodo}
                 onEdit={onEdit}
                 onDelete={onDelete}
-                isNew={() => todo.name === ''}
               />
             </li>
           ))
