@@ -31,6 +31,11 @@ export function TodosList ({ todos, setTodos }) {
     setTodos(newTodos)
   }
 
+  const onDelete = (id) => {
+    const newTodos = todos.filter(todo => todo.id !== id)
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <ul className='todos-list'>
@@ -41,6 +46,7 @@ export function TodosList ({ todos, setTodos }) {
                 todo={todo}
                 onToggle={() => toggleTodo(todo.id)}
                 onEdit={onEdit}
+                onDelete={onDelete}
                 isNew={() => todo.name === ''}
               />
             </li>
