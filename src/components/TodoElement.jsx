@@ -49,6 +49,7 @@ export function TodoElement ({ todo, onToggle, onEdit, onDelete, isNew }) {
                 type='text'
                 required
                 autoFocus
+                autoComplete='off'
                 placeholder='Task name'
                 id={inputId}
                 value={providedName}
