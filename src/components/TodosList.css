@@ -91,4 +91,8 @@
   & svg {
     opacity: 1;
   }
+
+  & .edit {
+    display: none;
+  }
 }
