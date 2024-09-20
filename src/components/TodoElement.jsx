@@ -13,6 +13,11 @@ export function TodoElement ({ todo, onToggle, onEdit, onDelete, isNew }) {
 
   const handleKeyUp = (e) => {
     if (e.key === 'Escape') {
+      if (todo.name !== '') {
+        setIsEditing(false)
+        return
+      }
+
       if (providedName === '') {
         onDelete(todo.id)
         return
