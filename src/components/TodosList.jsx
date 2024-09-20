@@ -20,6 +20,17 @@ export function TodosList ({ todos, setTodos }) {
     setTodos(newTodos)
   }
 
+  const onCreate = () => {
+    const newTodos = [...todos,
+      {
+        id: todos.length + 1,
+        name: '',
+        completed: false
+      }
+    ]
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <ul className='todos-list'>
@@ -30,13 +41,14 @@ export function TodosList ({ todos, setTodos }) {
                 todo={todo}
                 onToggle={() => toggleTodo(todo.id)}
                 onEdit={onEdit}
+                isNew={() => todo.name === ''}
               />
             </li>
           ))
         }
       </ul>
 
-      <CreateTaskButton />
+      <CreateTaskButton onCreate={onCreate} />
 
       <ul className='todos-list completed'>
         {

@@ -1,7 +1,7 @@
 import { useId, useState } from 'react'
 
-export function TodoElement ({ todo, onToggle, onEdit }) {
-  const [isEditing, setIsEditing] = useState(false)
+export function TodoElement ({ todo, onToggle, onEdit, isNew }) {
+  const [isEditing, setIsEditing] = useState(isNew)
   const [providedName, setProvidedName] = useState(todo.name)
   const inputId = useId()
 
@@ -36,6 +36,7 @@ export function TodoElement ({ todo, onToggle, onEdit }) {
             <form onSubmit={handleSubmit}>
               <input
                 type='text'
+                autoFocus
                 id={inputId}
                 value={providedName}
                 onChange={e => setProvidedName(e.target.value)}
