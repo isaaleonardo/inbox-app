@@ -44,7 +44,7 @@ export function TodosList ({ todos, setTodos }) {
             <li key={todo.id}>
               <TodoElement
                 todo={todo}
-                onToggle={() => toggleTodo(todo.id)}
+                onToggle={toggleTodo}
                 onEdit={onEdit}
                 onDelete={onDelete}
                 isNew={() => todo.name === ''}
@@ -62,7 +62,7 @@ export function TodosList ({ todos, setTodos }) {
             <li key={todo.id}>
               <TodoElement
                 todo={todo}
-                onToggle={() => toggleTodo(todo.id)}
+                onToggle={toggleTodo}
               />
             </li>
           ))
