@@ -3,21 +3,8 @@ import { Search } from './components/Search'
 import { TodosList } from './components/TodosList'
 import { useState } from 'react'
 
-const TODOS = [
-  {
-    id: 1,
-    name: 'hola',
-    completed: false
-  },
-  {
-    id: 2,
-    name: 'hola',
-    completed: true
-  }
-]
-
 function App () {
-  const [todos, setTodos] = useState(TODOS)
+  const [todos, setTodos] = useState([])
 
   return (
     <>
