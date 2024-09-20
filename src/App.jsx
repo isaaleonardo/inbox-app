@@ -4,7 +4,13 @@ import { TodosList } from './components/TodosList'
 import { useState } from 'react'
 
 function App () {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(() => {
+    const localStorageTodos = window.localStorage.getItem('todos')
+
+    return localStorageTodos
+      ? JSON.parse(localStorageTodos)
+      : []
+  })
   const [searchValue, setSearchValue] = useState('')
 
   const searchedTodos = todos.filter(todo => {
