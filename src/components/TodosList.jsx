@@ -9,7 +9,7 @@ export function TodosList ({ todos, setTodos }) {
   const { onCreate, onComplete, onEdit, onDelete } = useTodos(todos, setTodos)
 
   return (
-    <>
+    <main>
       <ul className='todos-list'>
         {
           activeTodos.map(todo => (
@@ -39,6 +39,6 @@ export function TodosList ({ todos, setTodos }) {
           ))
         }
       </ul>
-    </>
+    </main>
   )
 }
