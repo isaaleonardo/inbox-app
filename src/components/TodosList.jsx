@@ -10,7 +10,6 @@ export function TodosList ({ todos, setTodos }) {
     const newTodos = [...todos]
     const selectedTodoIndex = newTodos.findIndex(todo => todo.id === id)
     newTodos[selectedTodoIndex].completed = !newTodos[selectedTodoIndex].completed
-    window.localStorage.setItem('todos', JSON.stringify(newTodos))
     setTodos(newTodos)
   }
 
@@ -18,7 +17,6 @@ export function TodosList ({ todos, setTodos }) {
     const newTodos = [...todos]
     const selectedTodoIndex = newTodos.findIndex(todo => todo.id === id)
     newTodos[selectedTodoIndex].name = name
-    window.localStorage.setItem('todos', JSON.stringify(newTodos))
     setTodos(newTodos)
   }
 
@@ -30,13 +28,11 @@ export function TodosList ({ todos, setTodos }) {
         completed: false
       }
     ]
-    window.localStorage.setItem('todos', JSON.stringify(newTodos))
     setTodos(newTodos)
   }
 
   const onDelete = (id) => {
     const newTodos = todos.filter(todo => todo.id !== id)
-    window.localStorage.setItem('todos', JSON.stringify(newTodos))
     setTodos(newTodos)
   }
 

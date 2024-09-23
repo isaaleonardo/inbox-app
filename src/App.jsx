@@ -2,15 +2,10 @@ import './App.css'
 import { Search } from './components/Search'
 import { TodosList } from './components/TodosList'
 import { useState } from 'react'
+import { useStateWithLocalStorage } from './hooks/useStateWithLocalStorage'
 
 function App () {
-  const [todos, setTodos] = useState(() => {
-    const localStorageTodos = window.localStorage.getItem('todos')
-
-    return localStorageTodos
-      ? JSON.parse(localStorageTodos)
-      : []
-  })
+  const [todos, setTodos] = useStateWithLocalStorage('todos', [])
   const [searchValue, setSearchValue] = useState('')
 
   const searchedTodos = todos.filter(todo => {
