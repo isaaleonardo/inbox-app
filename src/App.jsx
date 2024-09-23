@@ -1,4 +1,5 @@
 import './App.css'
+import { Header } from './components/Header'
 import { Search } from './components/Search'
 import { TodosList } from './components/TodosList'
 import { useState } from 'react'
@@ -17,7 +18,7 @@ function App () {
 
   return (
     <>
-      <h1>Inbox</h1>
+      <Header setTodos={setTodos} />
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />
       <TodosList todos={searchedTodos} setTodos={setTodos} />
     </>
