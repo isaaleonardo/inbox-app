@@ -1,13 +1,13 @@
 import './Header.css'
 
 export function Header ({ setTodos }) {
-  const dialog = document.querySelector('dialog')
-
   const handleOpen = () => {
+    const dialog = document.querySelector('dialog')
     dialog.showModal()
   }
 
   const handleClose = () => {
+    const dialog = document.querySelector('dialog')
     dialog.close()
   }
 
