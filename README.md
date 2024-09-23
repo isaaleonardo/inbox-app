@@ -1,8 +1,24 @@
-# React + Vite
+# Inbox: Plan your day
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## **1. Introduction**
 
-Currently, two official plugins are available:
+**Project Name:** Inbox
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Description:** A minimalist app to manage all your tasks.
+
+## **2. Technologies Used**
+
+- **React:** A JavaScript library for building user interfaces.
+- **Vite:** A fast build tool for modern web applications.  
+- **Water CSS:** A classless CSS library.
+- **Custom Hooks:** Reusable functions that encapsulate state and logic within React components.
+- **Local Storage:** Browser-based storage for persisting data.
+
+## **3. Features**
+
+- **Task Creation:** Users can create new tasks with descriptions.
+- **Task Editing:** Users can modify existing tasks.
+- **Task Deletion:** Users can remove completed or unnecessary tasks.
+- **Task Completion:** Users can mark tasks as completed.
+- **Clean List:** Users can delete all tasks with just a button (and a confirmation modal).
+- **Local Storage Persistence:** Task data is stored in local storage for persistence across sessions.
