@@ -1,0 +1,16 @@
+#root {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Unset some default styles */
+body {
+  margin-block: unset;
+}
