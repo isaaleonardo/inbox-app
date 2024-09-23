@@ -16,6 +16,13 @@
     display: flex;
     gap: 5px;
     inline-size: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & .buttons {
+      display: flex;
+      gap: 5px;
+    }
   }
 
   & input {
