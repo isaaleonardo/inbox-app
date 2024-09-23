@@ -6,7 +6,7 @@ export function TodosList ({ todos, setTodos }) {
   const activeTodos = todos.filter(todo => !todo.completed)
   const completedTodos = todos.filter(todo => !!todo.completed)
 
-  const toggleTodo = (id) => {
+  const onComplete = (id) => {
     const newTodos = [...todos]
     const selectedTodoIndex = newTodos.findIndex(todo => todo.id === id)
     newTodos[selectedTodoIndex].completed = !newTodos[selectedTodoIndex].completed
@@ -48,7 +48,7 @@ export function TodosList ({ todos, setTodos }) {
             <li key={todo.id}>
               <TodoElement
                 todo={todo}
-                onToggle={toggleTodo}
+                onComplete={onComplete}
                 onEdit={onEdit}
                 onDelete={onDelete}
               />
@@ -65,7 +65,7 @@ export function TodosList ({ todos, setTodos }) {
             <li key={todo.id}>
               <TodoElement
                 todo={todo}
-                onToggle={toggleTodo}
+                onComplete={onComplete}
               />
             </li>
           ))

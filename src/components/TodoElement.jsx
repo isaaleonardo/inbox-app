@@ -1,6 +1,6 @@
 import { useId, useState } from 'react'
 
-export function TodoElement ({ todo, onToggle, onEdit, onDelete }) {
+export function TodoElement ({ todo, onComplete, onEdit, onDelete }) {
   const [isEditing, setIsEditing] = useState(() => todo.name === '')
   const [providedName, setProvidedName] = useState(todo.name)
   const inputId = useId()
@@ -36,7 +36,7 @@ export function TodoElement ({ todo, onToggle, onEdit, onDelete }) {
 
   const handleCheckboxClick = () => {
     if (!isEditing) {
-      onToggle(todo.id)
+      onComplete(todo.id)
     }
   }
 
